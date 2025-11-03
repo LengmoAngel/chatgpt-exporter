@@ -13,6 +13,8 @@
   "Save": "Simpan",
   "Delete": "Hapus",
   "Select All": "Pilih Semua",
+  "Select First N Conversations": "Pilih {{count}} percakapan pertama",
+  "Select": "Pilih",
   "Export": "Ekspor",
   "Error": "Kesalahan",
   "Loading": "Memuat",

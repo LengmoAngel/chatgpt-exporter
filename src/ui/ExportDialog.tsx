@@ -63,6 +63,18 @@ const ConversationSelect: FC<ConversationSelectProps> = ({
     error,
 }) => {
     const { t } = useTranslation()
+    const [selectCountInput, setSelectCountInput] = useState('100')
+
+    const parsedCount = Number.parseInt(selectCountInput, 10)
+    const isSelectCountValid = !Number.isNaN(parsedCount) && parsedCount > 0
+
+    const onSelectFirstCount = useCallback(() => {
+        if (!isSelectCountValid) return
+        const count = Math.min(parsedCount, conversations.length)
+        setSelected(conversations.slice(0, count))
+    }, [conversations, isSelectCountValid, parsedCount, setSelected])
+
+    const countLabelValue = selectCountInput.trim() !== '' ? selectCountInput.trim() : 'N'
 
     return (
         <>
@@ -75,6 +87,30 @@ const ConversationSelect: FC<ConversationSelectProps> = ({
                         setSelected(checked ? conversations : [])
                     }}
                 />
+                <div className="SelectCountGroup">
+                    <span className="SelectCountLabel">
+                        {t('Select First N Conversations', { count: countLabelValue })}
+                    </span>
+                    <input
+                        type="number"
+                        min="1"
+                        className="SelectCountInput"
+                        value={selectCountInput}
+                        onInput={(e) => {
+                            setSelectCountInput((e.currentTarget.value || '').replace(/[^0-9]/g, ''))
+                        }}
+                        disabled={disabled}
+                        aria-label={t('Select First N Conversations', { count: countLabelValue })}
+                    />
+                    <button
+                        type="button"
+                        className="Button SelectCountButton"
+                        onClick={onSelectFirstCount}
+                        disabled={disabled || !isSelectCountValid || conversations.length === 0}
+                    >
+                        {t('Select')}
+                    </button>
+                </div>
             </div>
             <ul className="SelectList">
                 {loading && <li className="SelectItem">{t('Loading')}...</li>}
