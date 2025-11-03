@@ -13,6 +13,8 @@
   "Save": "保存",
   "Delete": "刪除",
   "Select All": "全選",
+  "Select First N Conversations": "選擇前 {{count}} 個對話",
+  "Select": "選擇",
   "Export": "匯出",
   "Error": "錯誤",
   "Loading": "載入中",

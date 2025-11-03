@@ -395,10 +395,47 @@ html {
 .SelectToolbar {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 12px 16px;
     border-radius: 4px 4px 0 0;
     border: 1px solid #6f6e77;
     border-bottom: none;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.SelectCountGroup {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.SelectCountInput {
+    width: 80px;
+    height: 32px;
+    padding: 0 8px;
+    border: 1px solid #6f6e77;
+    border-radius: 4px;
+    background-color: transparent;
+    color: inherit;
+}
+
+.SelectCountInput:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.SelectCountButton {
+    height: 32px;
+    padding: 0 12px;
+    font-size: 13px;
+}
+
+.dark .SelectCountInput {
+    border-color: #6f6e77;
 }
 
 .SelectList {
@@ -8105,6 +8142,7 @@ html {
   const Archive$8 = "Archive";
   const Save$8 = "Save";
   const Delete$8 = "Delete";
+  const Select$8 = "Select";
   const Export$8 = "Export";
   const Loading$8 = "Loading";
   const Preview$8 = "Preview";
@@ -8123,6 +8161,8 @@ html {
     Save: Save$8,
     Delete: Delete$8,
     "Select All": "Select All",
+    "Select First N Conversations": "Select first {{count}} conversations",
+    Select: Select$8,
     Export: Export$8,
     "Error": "Error",
     Loading: Loading$8,
@@ -8164,6 +8204,7 @@ html {
   const Archive$7 = "Archivo";
   const Save$7 = "Guardar";
   const Delete$7 = "Borrar";
+  const Select$7 = "Seleccionar";
   const Export$7 = "Exportar";
   const Loading$7 = "Cargando";
   const Preview$7 = "Previsualizar";
@@ -8182,6 +8223,8 @@ html {
     Save: Save$7,
     Delete: Delete$7,
     "Select All": "Seleccionar Todos",
+    "Select First N Conversations": "Seleccionar las primeras {{count}} conversaciones",
+    Select: Select$7,
     Export: Export$7,
     "Error": "Error",
     Loading: Loading$7,
@@ -8223,6 +8266,7 @@ html {
   const Archive$6 = "Archiver";
   const Save$6 = "Enregistrer";
   const Delete$6 = "Supprimer";
+  const Select$6 = "Sélectionner";
   const Export$6 = "Exporter";
   const Loading$6 = "Chargement";
   const Preview$6 = "Aperçu";
@@ -8241,6 +8285,8 @@ html {
     Save: Save$6,
     Delete: Delete$6,
     "Select All": "Tout sélectionner",
+    "Select First N Conversations": "Sélectionner les {{count}} premières conversations",
+    Select: Select$6,
     Export: Export$6,
     "Error": "Erreur",
     Loading: Loading$6,
@@ -8282,6 +8328,7 @@ html {
   const Archive$5 = "Arsip";
   const Save$5 = "Simpan";
   const Delete$5 = "Hapus";
+  const Select$5 = "Pilih";
   const Export$5 = "Ekspor";
   const Loading$5 = "Memuat";
   const Preview$5 = "Pratinjau";
@@ -8300,6 +8347,8 @@ html {
     Save: Save$5,
     Delete: Delete$5,
     "Select All": "Pilih Semua",
+    "Select First N Conversations": "Pilih {{count}} percakapan pertama",
+    Select: Select$5,
     Export: Export$5,
     "Error": "Kesalahan",
     Loading: Loading$5,
@@ -8341,6 +8390,7 @@ html {
   const Archive$4 = "アーカイブ";
   const Save$4 = "保存";
   const Delete$4 = "削除";
+  const Select$4 = "選択";
   const Export$4 = "エクスポート";
   const Loading$4 = "読み込み中";
   const Preview$4 = "プレビュー";
@@ -8359,6 +8409,8 @@ html {
     Save: Save$4,
     Delete: Delete$4,
     "Select All": "すべて選択",
+    "Select First N Conversations": "先頭から{{count}}件を選択",
+    Select: Select$4,
     Export: Export$4,
     "Error": "エラー",
     Loading: Loading$4,
@@ -8400,6 +8452,7 @@ html {
   const Archive$3 = "Архивировать";
   const Save$3 = "Сохранить";
   const Delete$3 = "Удалить";
+  const Select$3 = "Выбрать";
   const Export$3 = "Экспорт";
   const Loading$3 = "Загрузка";
   const Preview$3 = "Предпросмотр";
@@ -8418,6 +8471,8 @@ html {
     Save: Save$3,
     Delete: Delete$3,
     "Select All": "Выбрать все",
+    "Select First N Conversations": "Выбрать первые {{count}} беседы",
+    Select: Select$3,
     Export: Export$3,
     "Error": "Ошибка",
     Loading: Loading$3,
@@ -8459,6 +8514,7 @@ html {
   const Archive$2 = "Arşiv";
   const Save$2 = "Kaydet";
   const Delete$2 = "Sil";
+  const Select$2 = "Seç";
   const Export$2 = "Dışa Aktar";
   const Loading$2 = "Yükleniyor";
   const Preview$2 = "Önizleme";
@@ -8477,6 +8533,8 @@ html {
     Save: Save$2,
     Delete: Delete$2,
     "Select All": "Tümünü Seç",
+    "Select First N Conversations": "İlk {{count}} konuşmayı seç",
+    Select: Select$2,
     Export: Export$2,
     "Error": "Hata",
     Loading: Loading$2,
@@ -8518,6 +8576,7 @@ html {
   const Archive$1 = "归档";
   const Save$1 = "保存";
   const Delete$1 = "删除";
+  const Select$1 = "选择";
   const Export$1 = "导出";
   const Loading$1 = "加载中";
   const Preview$1 = "预览";
@@ -8536,6 +8595,8 @@ html {
     Save: Save$1,
     Delete: Delete$1,
     "Select All": "全选",
+    "Select First N Conversations": "选择前 {{count}} 个会话",
+    Select: Select$1,
     Export: Export$1,
     "Error": "错误",
     Loading: Loading$1,
@@ -8577,6 +8638,7 @@ html {
   const Archive = "封存";
   const Save = "保存";
   const Delete = "刪除";
+  const Select = "選擇";
   const Export = "匯出";
   const Loading = "載入中";
   const Preview = "預覽";
@@ -8595,6 +8657,8 @@ html {
     Save,
     Delete,
     "Select All": "全選",
+    "Select First N Conversations": "選擇前 {{count}} 個對話",
+    Select,
     Export,
     "Error": "錯誤",
     Loading,
@@ -21925,18 +21989,56 @@ ${content2}`;
     error: error2
   }) => {
     const { t: t2 } = useTranslation();
+    const [selectCountInput, setSelectCountInput] = h$4("100");
+    const parsedCount = Number.parseInt(selectCountInput, 10);
+    const isSelectCountValid = !Number.isNaN(parsedCount) && parsedCount > 0;
+    const onSelectFirstCount = T$4(() => {
+      if (!isSelectCountValid) return;
+      const count = Math.min(parsedCount, conversations.length);
+      setSelected(conversations.slice(0, count));
+    }, [conversations, isSelectCountValid, parsedCount, setSelected]);
+    const countLabelValue = selectCountInput.trim() !== "" ? selectCountInput.trim() : "N";
     return /* @__PURE__ */ o$8(k$3, { children: [
-      /* @__PURE__ */ o$8("div", { className: "SelectToolbar", children: /* @__PURE__ */ o$8(
-        CheckBox,
-        {
-          label: t2("Select All"),
-          disabled,
-          checked: selected.length === conversations.length,
-          onCheckedChange: (checked) => {
-            setSelected(checked ? conversations : []);
+      /* @__PURE__ */ o$8("div", { className: "SelectToolbar", children: [
+        /* @__PURE__ */ o$8(
+          CheckBox,
+          {
+            label: t2("Select All"),
+            disabled,
+            checked: selected.length === conversations.length,
+            onCheckedChange: (checked) => {
+              setSelected(checked ? conversations : []);
+            }
           }
-        }
-      ) }),
+        ),
+        /* @__PURE__ */ o$8("div", { className: "SelectCountGroup", children: [
+          /* @__PURE__ */ o$8("span", { className: "SelectCountLabel", children: t2("Select First N Conversations", { count: countLabelValue }) }),
+          /* @__PURE__ */ o$8(
+            "input",
+            {
+              type: "number",
+              min: "1",
+              className: "SelectCountInput",
+              value: selectCountInput,
+              onInput: (e2) => {
+                setSelectCountInput((e2.currentTarget.value || "").replace(/[^0-9]/g, ""));
+              },
+              disabled,
+              "aria-label": t2("Select First N Conversations", { count: countLabelValue })
+            }
+          ),
+          /* @__PURE__ */ o$8(
+            "button",
+            {
+              type: "button",
+              className: "Button SelectCountButton",
+              onClick: onSelectFirstCount,
+              disabled: disabled || !isSelectCountValid || conversations.length === 0,
+              children: t2("Select")
+            }
+          )
+        ] })
+      ] }),
       /* @__PURE__ */ o$8("ul", { className: "SelectList", children: [
         loading && /* @__PURE__ */ o$8("li", { className: "SelectItem", children: [
           t2("Loading"),

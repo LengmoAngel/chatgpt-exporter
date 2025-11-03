@@ -13,6 +13,8 @@
   "Save": "Сохранить",
   "Delete": "Удалить",
   "Select All": "Выбрать все",
+  "Select First N Conversations": "Выбрать первые {{count}} беседы",
+  "Select": "Выбрать",
   "Export": "Экспорт",
   "Error": "Ошибка",
   "Loading": "Загрузка",

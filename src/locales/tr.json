@@ -13,6 +13,8 @@
   "Save": "Kaydet",
   "Delete": "Sil",
   "Select All": "Tümünü Seç",
+  "Select First N Conversations": "İlk {{count}} konuşmayı seç",
+  "Select": "Seç",
   "Export": "Dışa Aktar",
   "Error": "Hata",
   "Loading": "Yükleniyor",

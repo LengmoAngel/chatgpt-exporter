@@ -13,6 +13,8 @@
   "Save": "Enregistrer",
   "Delete": "Supprimer",
   "Select All": "Tout sélectionner",
+  "Select First N Conversations": "Sélectionner les {{count}} premières conversations",
+  "Select": "Sélectionner",
   "Export": "Exporter",
   "Error": "Erreur",
   "Loading": "Chargement",

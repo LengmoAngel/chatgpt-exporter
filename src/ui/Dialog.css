@@ -154,10 +154,47 @@
 .SelectToolbar {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 12px 16px;
     border-radius: 4px 4px 0 0;
     border: 1px solid #6f6e77;
     border-bottom: none;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.SelectCountGroup {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.SelectCountInput {
+    width: 80px;
+    height: 32px;
+    padding: 0 8px;
+    border: 1px solid #6f6e77;
+    border-radius: 4px;
+    background-color: transparent;
+    color: inherit;
+}
+
+.SelectCountInput:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.SelectCountButton {
+    height: 32px;
+    padding: 0 12px;
+    font-size: 13px;
+}
+
+.dark .SelectCountInput {
+    border-color: #6f6e77;
 }
 
 .SelectList {
